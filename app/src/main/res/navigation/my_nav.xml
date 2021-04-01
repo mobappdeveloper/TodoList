@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.manoch.todolist.view.AddNoteFragment"
+        android:label="new_note_fragment"
+        tools:layout="@layout/new_note_fragment" >
+        <action
+            android:id="@+id/action_newNoteFragment_to_notesFragment"
+            app:destination="@id/notesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.manoch.todolist.view.NotesFragment"
+        android:label="notes_fragment"
+        tools:layout="@layout/notes_fragment" >
+        <action
+            android:id="@+id/action_notesFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>
